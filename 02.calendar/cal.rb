@@ -22,7 +22,7 @@ def calender(year, month)
   (start_date..end_date).each do |date|
     print date.day.to_s.rjust(2) + " "
     # 土曜日の場合は改行
-    puts if date.wday == 6
+    puts if date.saturday?
   end
   puts "\n"
 end
