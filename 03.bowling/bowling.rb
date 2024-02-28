@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-score = ARGV[0]
-current_score = score.split(',')
+user_score = ARGV[0]
+scores = user_score.split(',')
 shots = []
-current_score.each do |score|
+scores.each do |score|
   if score == 'X'
     shots << 10 # 1投目
     shots << 0 # 2投目
