@@ -9,13 +9,15 @@ ROWS = 3
 def display_files(files)
 
   file_count = files.size
-  rows = ROWS
-
-  columns = (file_count + rows - 1) / rows
+  max_length = files.map(&:length).max
+  columns = (file_count + ROWS - 1) / ROWS
   (0...columns).each do |col|
-    (0...rows).each do |row|
+    (0...ROWS).each do |row|
       index = col + row * columns
-      print files[index].ljust(15) if index < file_count
+      if index < file_count
+        adjusted_filename = files[index].ljust(max_length + 1)
+        print adjusted_filename
+      end
     end
     puts
   end
