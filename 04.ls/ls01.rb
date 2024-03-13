@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
+
 ROWS = 3
 
 def fetch_files
@@ -14,6 +15,7 @@ def display_files(files)
     (0...ROWS).each do |row|
       index = col + row * columns
       next if index >= file_count
+
       print files[index].ljust(max_length + 1)
     end
     puts
